@@ -162,7 +162,7 @@ app.post("/api/req-reset", (req, res) => {
       "UPDATE users SET reset_token = ?, reset_expires = ? WHERE email = ?";
     db.query(updateSql, [token, expires, email], (err, result) => {
       if (err) return res.status(500).json(err);
-      const resetLink = `http://127.0.0.1:5500/reset-password.html?token=${token}`;
+      const resetLink = `http://192.168.1.4:5051/reset-password.html?token=${token}`;
 
       const mailOptions = {
         from: '"Unsap Food Hub" <230660121018@student.unsap.ac.id>',
