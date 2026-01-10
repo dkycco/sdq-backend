@@ -1,0 +1,7 @@
+services:
+  express:
+    build: .
+    container_name: sdq_backend
+    ports:
+      - "5050:5050"
+    restart: unless-stopped
